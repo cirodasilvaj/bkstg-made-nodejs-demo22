@@ -1,0 +1,41 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bakstg-nodejs-demo2
+  description: Node.js 20 microservice with SonarQube Quality Gate, Prometheus metrics and Fluentd/Loki logs
+  annotations:
+    github.com/project-slug: cirodasilvaj/bakstg-nodejs-demo2
+    backstage.io/techdocs-ref: dir:.
+    sonarqube.org/project-key: bakstg-nodejs-demo2
+    backstage.io/kubernetes-id: bakstg-nodejs-demo2
+    backstage.io/kubernetes-namespace: apps-demo
+    prometheus.io/scrape: "true"
+    prometheus.io/path: "/metrics"
+    fluentd.io/destination: "loki"
+    grafana/dashboard-selector: "bakstg-nodejs-demo2"
+    grafana/tag-selector: "service:bakstg-nodejs-demo2"
+    grafana/overview-dashboard: "http://grafana.992382723408.realhandsonlabs.net/d/bakstg-nodejs-demo2-dashboard"
+    argocd/app-name: bakstg-nodejs-demo2
+  tags:
+    - microservice
+    - k8s
+    - sonarqube
+    - prometheus
+    - fluentd
+    - loki
+    - argocd
+  links:
+    - url: https://github.com/cirodasilvaj/bakstg-nodejs-demo2
+      title: GitHub Source Code
+      icon: github
+    - url: http://grafana.992382723408.realhandsonlabs.net/d/bakstg-nodejs-demo2-dashboard
+      title: Grafana Dashboard
+      icon: dashboard
+    - url: http://sonarqube.992382723408.realhandsonlabs.net/dashboard?id=bakstg-nodejs-demo2
+      title: SonarQube Quality Gate
+      icon: check
+spec:
+  type: service
+  lifecycle: production
+  owner: platform-team
+  system: kube-demo-2026

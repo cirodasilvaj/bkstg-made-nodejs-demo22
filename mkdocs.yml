@@ -1,0 +1,6 @@
+site_name: bakstg-nodejs-demo2
+site_description: Documentation for bakstg-nodejs-demo2 microservice on Backstage IDP
+plugins:
+  - techdocs-core
+nav:
+  - Overview: index.md

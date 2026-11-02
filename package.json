@@ -1,0 +1,13 @@
+{
+  "name": "bakstg-nodejs-demo2",
+  "version": "1.0.0",
+  "description": "Node.js 20 microservice with SonarQube Quality Gate, Prometheus metrics and Fluentd/Loki logs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test server.test.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
