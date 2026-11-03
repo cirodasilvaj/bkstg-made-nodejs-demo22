@@ -1,5 +1,5 @@
 {
-  "name": "bakstg-nodejs-demo2",
+  "name": "bkstg-made-nodejs-demo22",
   "version": "1.0.0",
   "description": "Node.js 20 microservice with SonarQube Quality Gate, Prometheus metrics and Fluentd/Loki logs",
   "main": "server.js",

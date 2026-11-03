@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: bakstg-nodejs-demo2-external
+  name: bkstg-made-nodejs-demo22-external
   namespace: apps-demo
   labels:
-    app.kubernetes.io/name: bakstg-nodejs-demo2
+    app.kubernetes.io/name: bkstg-made-nodejs-demo22
     app.kubernetes.io/part-of: kube-demo-2026
     app.kubernetes.io/managed-by: argocd
     environment: sandbox
@@ -18,7 +18,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app.kubernetes.io/name: bakstg-nodejs-demo2
+    app.kubernetes.io/name: bkstg-made-nodejs-demo22
   ports:
     - name: http
       port: 80
