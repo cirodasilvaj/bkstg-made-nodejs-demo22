@@ -82,7 +82,7 @@ function buildPayload(req) {
   const uptime = ((Date.now() - START_TIME) / 1000).toFixed(2);
 
   return {
-    message: 'Hello World from Backstage Microservice!',
+    message: 'Hello World from Backstage Versao manual22 !',
     service: APP_NAME,
     ip: serverIp,
     server_ip: serverIp,
