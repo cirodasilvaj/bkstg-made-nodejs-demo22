@@ -1,59 +1,59 @@
 {
   "overwrite": true,
   "dashboard": {
-    "uid": "bakstg-nodejs-demo2-dashboard",
-    "title": "Service: bakstg-nodejs-demo2 (Node.js) — Prometheus & Fluentd/Loki",
-    "tags": ["bakstg-nodejs-demo2", "nodejs", "prometheus", "loki", "fluentd"],
+    "uid": "bkstg-made-nodejs-demo22-dashboard",
+    "title": "Service: bkstg-made-nodejs-demo22 (Node.js) — Prometheus & Fluentd/Loki",
+    "tags": ["bkstg-made-nodejs-demo22", "nodejs", "prometheus", "loki", "fluentd"],
     "timezone": "browser",
     "schemaVersion": 39,
     "refresh": "15s",
     "panels": [
       {
         "id": 1,
-        "title": "HTTP Requests Total — bakstg-nodejs-demo2 (Prometheus /metrics)",
+        "title": "HTTP Requests Total — bkstg-made-nodejs-demo22 (Prometheus /metrics)",
         "type": "timeseries",
         "gridPos": { "h": 7, "w": 8, "x": 0, "y": 0 },
         "datasource": { "type": "prometheus", "uid": "prometheus-eks" },
         "targets": [
           {
-            "expr": "sum by (endpoint) (app_http_requests_total{app=\"bakstg-nodejs-demo2\"})",
+            "expr": "sum by (endpoint) (app_http_requests_total{app=\"bkstg-made-nodejs-demo22\"})",
             "legendFormat": "{{endpoint}}"
           }
         ]
       },
       {
         "id": 2,
-        "title": "Node.js Uptime & CPU Usage — bakstg-nodejs-demo2 (Prometheus)",
+        "title": "Node.js Uptime & CPU Usage — bkstg-made-nodejs-demo22 (Prometheus)",
         "type": "timeseries",
         "gridPos": { "h": 7, "w": 8, "x": 8, "y": 0 },
         "datasource": { "type": "prometheus", "uid": "prometheus-eks" },
         "targets": [
           {
-            "expr": "app_uptime_seconds{app=\"bakstg-nodejs-demo2\"}",
+            "expr": "app_uptime_seconds{app=\"bkstg-made-nodejs-demo22\"}",
             "legendFormat": "uptime (s)"
           },
           {
-            "expr": "sum by (pod) (rate(container_cpu_usage_seconds_total{pod=~\"bakstg-nodejs-demo2.*\",container!=\"\"}[5m]))",
+            "expr": "sum by (pod) (rate(container_cpu_usage_seconds_total{pod=~\"bkstg-made-nodejs-demo22.*\",container!=\"\"}[5m]))",
             "legendFormat": "CPU: {{pod}}"
           }
         ]
       },
       {
         "id": 3,
-        "title": "Node.js Pod Memory Working Set — bakstg-nodejs-demo2 (Prometheus)",
+        "title": "Node.js Pod Memory Working Set — bkstg-made-nodejs-demo22 (Prometheus)",
         "type": "timeseries",
         "gridPos": { "h": 7, "w": 8, "x": 16, "y": 0 },
         "datasource": { "type": "prometheus", "uid": "prometheus-eks" },
         "targets": [
           {
-            "expr": "sum by (pod) (container_memory_working_set_bytes{pod=~\"bakstg-nodejs-demo2.*\",container!=\"\"})",
+            "expr": "sum by (pod) (container_memory_working_set_bytes{pod=~\"bkstg-made-nodejs-demo22.*\",container!=\"\"})",
             "legendFormat": "{{pod}}"
           }
         ]
       },
       {
         "id": 4,
-        "title": "Live Node.js Logs — bakstg-nodejs-demo2 (Fluentd -> Loki)",
+        "title": "Live Node.js Logs — bkstg-made-nodejs-demo22 (Fluentd -> Loki)",
         "type": "logs",
         "gridPos": { "h": 10, "w": 24, "x": 0, "y": 7 },
         "datasource": { "type": "loki", "uid": "loki-eks" },
@@ -66,7 +66,7 @@
         },
         "targets": [
           {
-            "expr": "{app=\"bakstg-nodejs-demo2\"}"
+            "expr": "{app=\"bkstg-made-nodejs-demo22\"}"
           }
         ]
       }

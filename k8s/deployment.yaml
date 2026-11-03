@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bakstg-nodejs-demo2
+  name: bkstg-made-nodejs-demo22
   namespace: apps-demo
   labels:
-    app.kubernetes.io/name: bakstg-nodejs-demo2
-    app.kubernetes.io/instance: bakstg-nodejs-demo2-prod
+    app.kubernetes.io/name: bkstg-made-nodejs-demo22
+    app.kubernetes.io/instance: bkstg-made-nodejs-demo22-prod
     app.kubernetes.io/version: "1.0.0"
     app.kubernetes.io/component: backend-api
     app.kubernetes.io/part-of: kube-demo-2026
@@ -14,23 +14,23 @@ metadata:
     environment: sandbox
     cost-center: devops-platform-cloud
     cloud-provider: aws
-    source-project: bakstg-nodejs-demo2
+    source-project: bkstg-made-nodejs-demo22
     owner: platform-team
-    backstage.io/kubernetes-id: bakstg-nodejs-demo2
+    backstage.io/kubernetes-id: bkstg-made-nodejs-demo22
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/name: bakstg-nodejs-demo2
+      app.kubernetes.io/name: bkstg-made-nodejs-demo22
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: bakstg-nodejs-demo2
-        app.kubernetes.io/instance: bakstg-nodejs-demo2-prod
+        app.kubernetes.io/name: bkstg-made-nodejs-demo22
+        app.kubernetes.io/instance: bkstg-made-nodejs-demo22-prod
         app.kubernetes.io/component: backend-api
         environment: sandbox
         owner: platform-team
-        backstage.io/kubernetes-id: bakstg-nodejs-demo2
+        backstage.io/kubernetes-id: bkstg-made-nodejs-demo22
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/port: "8080"
@@ -40,14 +40,14 @@ spec:
         fluentd.io/destination: "loki"
     spec:
       containers:
-        - name: bakstg-nodejs-demo2
-          image: ghcr.io/cirodasilvaj/bakstg-nodejs-demo2:latest
+        - name: bkstg-made-nodejs-demo22
+          image: ghcr.io/cirodasilvaj/bkstg-made-nodejs-demo22:latest
           ports:
             - name: http
               containerPort: 8080
           env:
             - name: APP_NAME
-              value: "bakstg-nodejs-demo2"
+              value: "bkstg-made-nodejs-demo22"
             - name: FLUENTD_HOST
               value: "fluentd.logging.svc.cluster.local"
             - name: FLUENTD_PORT
@@ -75,10 +75,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: bakstg-nodejs-demo2
+  name: bkstg-made-nodejs-demo22
   namespace: apps-demo
   labels:
-    app.kubernetes.io/name: bakstg-nodejs-demo2
+    app.kubernetes.io/name: bkstg-made-nodejs-demo22
     app.kubernetes.io/part-of: kube-demo-2026
     app.kubernetes.io/managed-by: argocd
     environment: sandbox
@@ -92,7 +92,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app.kubernetes.io/name: bakstg-nodejs-demo2
+    app.kubernetes.io/name: bkstg-made-nodejs-demo22
   ports:
     - name: http
       port: 8080
